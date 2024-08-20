@@ -22,12 +22,38 @@ header {
     position: fixed;
     width: 100%;
     z-index: 99;
+    box-shadow: 0 2px 2px #313f31;
 }
 
 header a {
     font-size: 130%;
     color:lightseagreen;
     text-decoration: none;
+}
+
+#options {
+    font-size: 110%;
+    letter-spacing: 3px;
+    list-style-type: none;
+}
+
+options > li {
+    margin-bottom: 1.2em;
+}
+
+.active {
+    border-bottom: 1px solid lightseagreen;
+}
+
+nav {
+    position: absolute;
+    left: 0;
+    background-color: slategray;
+    padding: 0 1rem;
+    width: 100%;
+    z-index: 99;
+    box-shadow: 0 2px 2px #313f31;
+    display: none;
 }
 
 main {
