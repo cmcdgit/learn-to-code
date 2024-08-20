@@ -23,6 +23,9 @@ header {
     width: 100%;
     z-index: 99;
     box-shadow: 0 2px 2px #313f31;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* align-items: baseline; */
 }
 
 header a {
@@ -31,10 +34,15 @@ header a {
     text-decoration: none;
 }
 
+#logo {
+    margin-left: auto;
+}
+
 #options {
     font-size: 110%;
     letter-spacing: 3px;
     list-style-type: none;
+    padding-bottom: .5em;
 }
 
 options > li {
@@ -54,14 +62,43 @@ nav {
     z-index: 99;
     box-shadow: 0 2px 2px #313f31;
     display: none;
+    top: 98%;
+}
+
+#nav-toggle:checked~nav {
+    display: block;
+}
+
+#nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    color: darkslategrey;
+    font-size: 2rem;
 }
 
 main {
     background-color:darkslategrey;
     flex: 1 0 auto;
+    margin-top: 93px;
 }
 
 footer {
     background-color: antiquewhite;
     font-size: 130%;
+}
+
+.centered {
+    font-size: 180%;
+    padding-top: 0.5em;
+    text-align: center;
+}
+
+#book {
+    background-color: antiquewhite;
+    border: solid;
+    margin: 25px;
+    padding: 35px;
+    border-radius: 20px;
 }
