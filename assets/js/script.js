@@ -118,6 +118,14 @@ function displayQuestion(questionsAsked, questions) {
 
     document.getElementById("question").textContent = questions[randomNum]['question'];
 
+    // console.log("THIS...")
+    // console.log(questions[randomNum]['difficulty']);
+
+    // set difficulty level in question box
+    document.getElementById('difficulty-rating').textContent = questions[randomNum]['difficulty']
+
+    // TODO: set colour code GREEN, AMBER, RED based on difficulty
+
     let listOfOptions = [
         "option0",
         "option1",
