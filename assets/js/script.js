@@ -14,59 +14,150 @@ let cssQuestionsAsked = [];
 let javascriptQuestionsAsked = [];
 let cPlusPlusQuestionsAsked = [];
 
+let currentQuestion;
+let currentQuestionsAsked;
+let currentQuestions;
+let questionCounter;
+
 document.addEventListener("DOMContentLoaded", function() {
     let options = document.getElementsByTagName('button');
-
-    console.log('loaded...');
 
     for (let option of options) {
         option.addEventListener('click', function() {
             let language = this.getAttribute("language");
-            takeQuiz(language);
+            let selection = this.getAttribute("selection");
+
+            if (!selection && language) {
+                console.log("language", language);
+                resetAllQuestionsAskedArrays(); //todo: is this the correct place to reset????
+                takeQuiz(language);
+            } else if (!language && selection) {
+                console.log("selection", selection)
+                checkForCorrectAnswer(selection);
+            }
         })
     }
 })
 
 function takeQuiz(language) {
+    questionCounter = 0;
+
+    // hide the results box again when starting a new game
+    let resultsDisplayed = document.getElementById("resultsBox");
+    resultsDisplayed.style.display = "none"
 
     if (language === "python") {
         // takePythonQuiz();
-        displayQuestion(pythonQuestionsAsked, pythonQuestions);
+        currentQuestionsAsked = pythonQuestionsAsked;
+        currentQuestions = pythonQuestions;
     } else if (language === "css") {
         // takeCSSQuiz();
-        displayQuestion(cssQuestionsAsked, cssQuestions);
+        currentQuestionsAsked = cssQuestionsAsked;
+        currentQuestions = cssQuestions;
     } else if (language === "javascript") {
         // takeJavaScriptQuiz();
-        displayQuestion(javascriptQuestionsAsked, javascriptQuestions);
+        currentQuestionsAsked = javascriptQuestionsAsked;
+        currentQuestions = javascriptQuestions;
     } else if (language === "c++") {
         // takeCPPQuiz();
-        displayQuestion(cPlusPlusQuestionsAsked, cPlusPlusQuestions);
+        currentQuestionsAsked = cPlusPlusQuestionsAsked;
+        currentQuestions = cPlusPlusQuestions;
     }
+    displayQuestion(currentQuestionsAsked, currentQuestions);
+    // console.log("About to reset...\n")
 }
 
-function getUniqueRandomNumberUnder29(askedArray) {
-    let questionNum
+function resetAllQuestionsAskedArrays() { // is this working as it should????
+    pythonQuestionsAsked = [];
+    cssQuestionsAsked = [];
+    javascriptQuestionsAsked = [];
+    cPlusPlusQuestionsAsked = [];
+}
+
+function getUniqueRandomNumber(askedArray, maxNumber) {
+    let questionNum;
     do {
-        questionNum = Math.floor(Math.random() * 29);
+        questionNum = Math.floor(Math.random() * maxNumber);
     } while (askedArray.includes(questionNum));
 
     askedArray.push(questionNum);
     return questionNum;
 }
 
+function endGame() {
+    let finalRightAnswersTotal = parseInt(document.getElementById("right-answers-total").innerText);
+    document.getElementById("right-answers-total").textContent = 0;
+    document.getElementById("final-right-answers-total").textContent = finalRightAnswersTotal;
+
+    let finalWrongAnswersTotal = parseInt(document.getElementById("wrong-answers-total").innerText);
+    document.getElementById("wrong-answers-total").textContent = 0;
+    document.getElementById("final-wrong-answers-total").textContent = finalWrongAnswersTotal;
+
+    let resultsBox = document.getElementById("resultsBox");
+    resultsBox.style.display = "block";
+
+    let questionBox = document.getElementById("questionBox");
+    questionBox.style.display = "none"
+
+    console.log("finalRightAnswersTotal:", finalRightAnswersTotal);
+    console.log("finalWrongAnswersTotal:", finalWrongAnswersTotal);
+    console.log("GAME_OVER")
+}
+
 function displayQuestion(questionsAsked, questions) {
+
     let questionBox = document.getElementById("questionBox");
     questionBox.style.display = "block";
 
-    let randomNum = getUniqueRandomNumberUnder29(questionsAsked);
-    // console.log("questions[randomNum]['question']", questions[randomNum]['options'][0]);
+    let randomNum = getUniqueRandomNumber(questionsAsked, 29);
+
+    currentQuestion = questions[randomNum];
+
+    // console.log("currentQuestion");
+    // console.log(currentQuestion);
 
     document.getElementById("question").textContent = questions[randomNum]['question'];
-    document.getElementById("option1").textContent = questions[randomNum]['options'][0];
-    document.getElementById("option2").textContent = questions[randomNum]['options'][1];
-    document.getElementById("option3").textContent = questions[randomNum]['options'][2];
-    document.getElementById("option4").textContent = questions[randomNum]['options'][3];
+
+    let listOfOptions = [
+        "option0",
+        "option1",
+        "option2",
+        "option3",
+    ]
+
+    let usedNums = [];
+    for (let option of listOfOptions) {
+        let randomOption = getUniqueRandomNumber(usedNums, 4);
+        document.getElementById(option).textContent = questions[randomNum]['options'][randomOption];
+    }
 }
+
+function checkForCorrectAnswer(selection) {
+    let guessedAnswer = document.getElementById(`option${selection}`).innerText;
+
+    if (guessedAnswer === currentQuestion['answer']){
+        incremenTotal('right-answers-total');
+    } else {
+        incremenTotal('wrong-answers-total');
+    }
+
+    if (questionCounter < 19) {
+        questionCounter++;
+        displayQuestion(currentQuestionsAsked, currentQuestions);
+    } else {
+        endGame();
+    }
+
+}
+
+function incremenTotal(answerType) {
+    let currentTotal = parseInt(document.getElementById(answerType).innerText);
+    document.getElementById(answerType).textContent = ++currentTotal;
+}
+
+// function incrementWrongAnswerTotal() {
+
+// }
 
 // TODO: remove below when troubleshooting complete
 // function takePythonQuiz() {

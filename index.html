@@ -64,12 +64,29 @@
                 <div id="questionBox">
                     <div id="question"></div>
                     <div id="answer-options-box">
-                        <button id="option1"></button>
-                        <button id="option2"></button>
-                        <button id="option3"></button>
-                        <button id="option4"></button>
+                        <button id="option0" selection="0"></button>
+                        <button id="option1" selection="1"></button>
+                        <button id="option2" selection="2"></button>
+                        <button id="option3" selection="3"></button>
+                    </div>
+                    <div class="score-area">
+                        <p>Right Answers <span id="right-answers-total">0</span></p>
+                        <p>Wrong Answers <span id="wrong-answers-total">0</span></p>
                     </div>
                 </div>
+
+                <div id="resultsBox">
+                    <div class="final-score">
+                        <p>You got <span id="final-right-answers-total">0</span>/20 right</p>
+                        <p>and...  <span id="final-wrong-answers-total">0</span> wrong</p>
+                        <div>
+                            <p>
+                                Select a language above to play again
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </section>
         </div>
     </main>

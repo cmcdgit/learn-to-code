@@ -180,6 +180,17 @@ footer {
     display: none;
 }
 
+#resultsBox {
+    background-color: antiquewhite;
+    border: solid;
+    width: 100%;
+    align-items: center;
+    padding: 25px;
+    padding-top: 20%;
+    border-radius: 20px;
+    display: none;
+}
+
 #computer-image {
     height: 1200px;
     background: url("../images/laptop.jpg") no-repeat center center/cover;
