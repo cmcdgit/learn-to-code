@@ -89,15 +89,35 @@ footer {
     font-size: 130%;
 }
 
+#useful-links {
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+#useful-links i {
+    font-size: 160%;
+    padding: 5%;
+    color: rgb(9, 31, 31);
+}
+
 .centered {
     font-size: 180%;
     padding-top: 0.5em;
+    padding-bottom: 40px;
     text-align: center;
+}
+
+#all-books {
+    /* flex-direction: row; */
 }
 
 #book {
     background-color: antiquewhite;
     border: solid;
+    /* width: .25em; */
     margin: 25px;
     padding: 35px;
     border-radius: 20px;
