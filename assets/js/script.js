@@ -28,11 +28,9 @@ document.addEventListener("DOMContentLoaded", function() {
             let selection = this.getAttribute("selection");
 
             if (!selection && language) {
-                console.log("language", language);
                 resetAllQuestionsAskedArrays(); //todo: is this the correct place to reset????
                 takeQuiz(language);
             } else if (!language && selection) {
-                console.log("selection", selection)
                 checkForCorrectAnswer(selection);
             }
         })
@@ -64,7 +62,6 @@ function takeQuiz(language) {
         currentQuestions = cPlusPlusQuestions;
     }
     displayQuestion(currentQuestionsAsked, currentQuestions);
-    // console.log("About to reset...\n")
 }
 
 function resetAllQuestionsAskedArrays() { // is this working as it should????
@@ -98,10 +95,6 @@ function endGame() {
 
     let questionBox = document.getElementById("questionBox");
     questionBox.style.display = "none"
-
-    console.log("finalRightAnswersTotal:", finalRightAnswersTotal);
-    console.log("finalWrongAnswersTotal:", finalWrongAnswersTotal);
-    console.log("GAME_OVER")
 }
 
 function displayQuestion(questionsAsked, questions) {
@@ -113,13 +106,7 @@ function displayQuestion(questionsAsked, questions) {
 
     currentQuestion = questions[randomNum];
 
-    // console.log("currentQuestion");
-    // console.log(currentQuestion);
-
     document.getElementById("question").textContent = questions[randomNum]['question'];
-
-    // console.log("THIS...")
-    // console.log(questions[randomNum]['difficulty']);
 
     // set difficulty level in question box
     document.getElementById('difficulty-rating').textContent = questions[randomNum]['difficulty']
@@ -144,9 +131,9 @@ function checkForCorrectAnswer(selection) {
     let guessedAnswer = document.getElementById(`option${selection}`).innerText;
 
     if (guessedAnswer === currentQuestion['answer']){
-        incremenTotal('right-answers-total');
+        incrementTotal('right-answers-total');
     } else {
-        incremenTotal('wrong-answers-total');
+        incrementTotal('wrong-answers-total');
     }
 
     if (questionCounter < 19) {
@@ -158,40 +145,8 @@ function checkForCorrectAnswer(selection) {
 
 }
 
-function incremenTotal(answerType) {
+function incrementTotal(answerType) {
     let currentTotal = parseInt(document.getElementById(answerType).innerText);
     document.getElementById(answerType).textContent = ++currentTotal;
 }
 
-// function incrementWrongAnswerTotal() {
-
-// }
-
-// TODO: remove below when troubleshooting complete
-// function takePythonQuiz() {
-//     displayQuestion(pythonQuestionsAsked, pythonQuestions);
-//     // console.log("pythonQuestions\n", pythonQuestions);
-//     // console.log("pythonQuestionsAsked\n", pythonQuestionsAsked);
-//     // console.log("pythonBookRecommendations\n", pythonBookRecommendations);
-// }
-
-// function takeCSSQuiz() {
-//     displayQuestion(cssQuestionsAsked, cssQuestions);
-//     // console.log("cssQuestions\n", cssQuestions);
-//     // console.log("cssQuestionsAsked\n", cssQuestionsAsked);
-//     // console.log("cssBookRecommendations\n", cssBookRecommendations);
-// }
-
-// function takeJavaScriptQuiz() {
-//     displayQuestion(javascriptQuestionsAsked, javascriptQuestions);
-//     // console.log("javascriptQuestions\n", javascriptQuestions);
-//     // console.log("javascriptQuestionsAsked\n", javascriptQuestionsAsked);
-//     // console.log("javascriptBookRecommendations\n", javascriptBookRecommendations);
-// }
-
-// function takeCPPQuiz() {
-//     displayQuestion(cPlusPlusQuestionsAsked, cPlusPlusQuestions);
-//     // console.log("cPlusPlusQuestions", cPlusPlusQuestions);
-//     // console.log("cPlusPlusQuestionsAsked", cPlusPlusQuestionsAsked);
-//     // console.log("cPlusPlusBookRecommendations", cPlusPlusBookRecommendations);
-// }
