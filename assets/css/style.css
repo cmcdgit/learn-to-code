@@ -49,6 +49,16 @@ options > li {
     margin-bottom: 1.2em;
 }
 
+#language-options {
+    /* flex-direction: row; */
+    display: flex;
+    font-size: 110%;
+    padding-top: 0.5em;
+    padding-bottom: 2px;
+    justify-content: space-evenly;
+    /* text-align: center; */
+}
+
 .active {
     border-bottom: 1px solid lightseagreen;
 }
@@ -104,7 +114,7 @@ footer {
 }
 
 .centered {
-    font-size: 180%;
+    font-size: 210%;
     padding-top: 0.5em;
     padding-bottom: 40px;
     text-align: center;
@@ -112,13 +122,50 @@ footer {
 
 #all-books {
     /* flex-direction: row; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-bottom: 1.5em;
 }
 
 #book {
     background-color: antiquewhite;
     border: solid;
-    /* width: .25em; */
+    width: 270px;
+    height: 400px;
     margin: 25px;
     padding: 35px;
     border-radius: 20px;
+}
+
+.with-border {
+    padding: 75px;
+    align-items: center;
+}
+
+#question {
+    background-color: antiquewhite;
+    border: solid;
+    display: flex;
+    /* position: relative; */
+    width: 20%;
+    align-items: center;
+    /* width: .25em; */
+    /* margin-top: 25px; */
+    padding: 25px;
+    border-radius: 20px;
+}
+
+#question:hover {
+    background-color: rgb(253, 246, 241);
+}
+
+#computer-image {
+    height: 1200px;
+    background: url("../images/laptop.jpg") no-repeat center center/cover;
+    /* width: 80%; */
+    /* padding: .5rem; */
+    align-items: center;
+    border-radius: 20px;
+    /* position: relative; */
 }

@@ -1,7 +1,14 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-<!-- favicon credit -->
-<!-- coding by Soetarman Atmodjo from <a href="https://thenounproject.com/browse/icons/term/coding/" target="_blank" title="coding Icons">Noun Project</a> (CC BY 3.0) -->
+<!-- favicon citation -->
+<!--
+coding by Soetarman Atmodjo from <a href="https://thenounproject.com/browse/icons/term/coding/" target="_blank" title="coding Icons">Noun Project</a> (CC BY 3.0) 
+-->
+
+<!-- openAI citation -->
+<!--
+OpenAI. (2024). ChatGPT [Large language model]. https://chatgpt.com/c/a38b9f29-1212-4444-b286-ffe5b6ea8ffa
+ -->
 
 Welcome Ciaran Mc Devitt,
 
