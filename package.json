@@ -1,0 +1,19 @@
+{
+  "name": "learn-to-code",
+  "version": "1.0.0",
+  "description": "resources for new developers",
+  "export": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmcdgit/learn-to-code.git"
+  },
+  "author": "cmcd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmcdgit/learn-to-code/issues"
+  },
+  "homepage": "https://github.com/cmcdgit/learn-to-code#readme"
+}

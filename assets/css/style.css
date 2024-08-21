@@ -19,6 +19,7 @@ header {
     background-color:slategrey ;
     text-align: center;
     padding: 0 1rem;
+    padding-top: 25px;
     position: fixed;
     width: 100%;
     z-index: 99;
@@ -88,10 +89,14 @@ nav {
     font-size: 2rem;
 }
 
+.nav-toggle-label:hover {
+    color:  antiquewhite;
+}
+
 main {
     background-color:darkslategrey;
     flex: 1 0 auto;
-    margin-top: 93px;
+    margin-top: 119px;
 }
 
 footer {
@@ -99,7 +104,7 @@ footer {
     font-size: 130%;
 }
 
-#useful-links {
+#social-media-links {
     text-align: center;
     padding: 20px 0;
     display: flex;
@@ -107,7 +112,7 @@ footer {
     list-style-type: none;
 }
 
-#useful-links i {
+#social-media-links i {
     font-size: 160%;
     padding: 5%;
     color: rgb(9, 31, 31);
@@ -118,6 +123,13 @@ footer {
     padding-top: 0.5em;
     padding-bottom: 40px;
     text-align: center;
+}
+
+.button-centered {
+    font-size: 120%;
+    color: darkslategrey;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #all-books {
@@ -143,29 +155,33 @@ footer {
     align-items: center;
 }
 
-#question {
+#language {
     background-color: antiquewhite;
-    border: solid;
+    /* border: solid; */
     display: flex;
-    /* position: relative; */
     width: 20%;
     align-items: center;
-    /* width: .25em; */
-    /* margin-top: 25px; */
     padding: 25px;
     border-radius: 20px;
 }
 
-#question:hover {
+#language:hover {
     background-color: rgb(253, 246, 241);
+}
+
+#question {
+    background-color: antiquewhite;
+    border: solid;
+    width: 100%;
+    align-items: center;
+    padding: 25px;
+    padding-top: 20%;
+    border-radius: 20px;
 }
 
 #computer-image {
     height: 1200px;
     background: url("../images/laptop.jpg") no-repeat center center/cover;
-    /* width: 80%; */
-    /* padding: .5rem; */
     align-items: center;
     border-radius: 20px;
-    /* position: relative; */
 }

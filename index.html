@@ -18,12 +18,12 @@
     
     <header>
         <a href="index.html">
-            <h1 id="logo">(learn_to_code)</h1>
+            <h1 id="logo">learn_to_code</h1>
         </a>
         <input type="checkbox" name="nav-toggle" id="nav-toggle">
         <label for="nav-toggle" class="nav-toggle-label">
-            <i class="nav-toggle-display fa-solid fa-caret-down"></i>
-            <i class="nav-toggle-hide"></i>
+            <i class="nav-toggle-display fa-solid fa-ellipsis"></i>
+            <!-- TODO (remove?): <i class="nav-toggle-hide"></i> -->
         </label>
         <nav>
             <ul id="options">
@@ -38,27 +38,38 @@
             take a test on?
         </h2>
         <div id="language-options">
-            <div id="question">
-                python
-            </div>
-            <div id="question">
-                css
-            </div>
-            <div id="question">
-                javascript
-            </div>
-            <div id="question">
-                c++
-            </div>
+            <button id="language" language="python">
+                <div class="button-centered">
+                    python
+                </div>
+            </button>
+            <button id="language" language="css">
+                <div class="button-centered">
+                    css
+                </div>
+            </button>
+            <button id="language" language="javascript">
+                <div class="button-centered">
+                    javascript
+                </div>
+            </button>
+            <button id="language" language="c++">
+                <div class="button-centered">
+                    c++
+                </div>
+            </button>
         </div>
         <div class="with-border">
             <section id="computer-image">
+                <div id="question">
+
+                </div>
             </section>
         </div>
     </main>
 
     <footer>
-        <ul id="useful-links">
+        <ul id="social-media-links">
             <li>
                 <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Visit us on Facebook (opens new tab)">
                     <i class="fa-brands fa-facebook"></i>
@@ -82,7 +93,7 @@
         </ul>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+    <script type="module" src="assets/js/script.js"></script>
     <!-- font awesome kit -->
     <script src="https://kit.fontawesome.com/79eaa123d2.js" crossorigin="anonymous"></script>
 </body>
