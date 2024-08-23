@@ -10,13 +10,9 @@ import { cssBookRecommendations } from '../data/recommended-books/css-book-recom
 import { javascriptBookRecommendations } from '../data/recommended-books/javascript-book-recommendations.js';
 import { cPlusPlusBookRecommendations } from '../data/recommended-books/cPlusPlus-book-recommendations.js';
 
-let pythonQuestionsAsked = [];
-let cssQuestionsAsked = [];
-let javascriptQuestionsAsked = [];
-let cPlusPlusQuestionsAsked = [];
-
+// keep track of current questions to avoid repeating
 let currentQuestion;
-let currentQuestionsAsked;
+let currentQuestionsAsked = [];
 let currentQuestions;
 let questionCounter;
 
@@ -35,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!selection && language) {
           document.getElementById('right-answers-total').textContent = 0;
           document.getElementById('wrong-answers-total').textContent = 0;
-          resetAllQuestionsAskedArrays(); //todo: is this the correct place to reset????
+          currentQuestionsAsked = [];
           takeQuiz(language);
         } else if (!language && selection) {
           checkForCorrectAnswer(selection);
@@ -55,31 +51,15 @@ function takeQuiz(language) {
   resultsDisplayed.style.display = 'none';
 
   if (language === 'python') {
-    // takePythonQuiz();
-    currentQuestionsAsked = pythonQuestionsAsked;
     currentQuestions = pythonQuestions;
   } else if (language === 'css') {
-    // takeCSSQuiz();
-    currentQuestionsAsked = cssQuestionsAsked;
     currentQuestions = cssQuestions;
   } else if (language === 'javascript') {
-    // takeJavaScriptQuiz();
-    currentQuestionsAsked = javascriptQuestionsAsked;
     currentQuestions = javascriptQuestions;
   } else if (language === 'c++') {
-    // takeCPPQuiz();
-    currentQuestionsAsked = cPlusPlusQuestionsAsked;
     currentQuestions = cPlusPlusQuestions;
   }
-  displayQuestion(currentQuestionsAsked, currentQuestions);
-}
-
-function resetAllQuestionsAskedArrays() {
-  // is this working as it should????
-  pythonQuestionsAsked = [];
-  cssQuestionsAsked = [];
-  javascriptQuestionsAsked = [];
-  cPlusPlusQuestionsAsked = [];
+  displayQuestion(currentQuestions);
 }
 
 function getUniqueRandomNumber(askedArray, maxNumber) {
@@ -114,11 +94,11 @@ function endGame() {
   questionBox.style.display = 'none';
 }
 
-function displayQuestion(questionsAsked, questions) {
+function displayQuestion(questions) {
   let questionBox = document.getElementById('questionBox');
   questionBox.style.display = 'flex';
 
-  let randomNum = getUniqueRandomNumber(questionsAsked, 29);
+  let randomNum = getUniqueRandomNumber(currentQuestionsAsked, 29);
 
   currentQuestion = questions[randomNum];
 
@@ -152,7 +132,7 @@ function checkForCorrectAnswer(selection) {
 
   if (questionCounter < 19) {
     questionCounter++;
-    displayQuestion(currentQuestionsAsked, currentQuestions);
+    displayQuestion(currentQuestions);
   } else {
     endGame();
   }
