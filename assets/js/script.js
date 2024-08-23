@@ -1,12 +1,14 @@
-import { pythonQuestions } from '../questions/python-questions.js';
-import { cssQuestions } from '../questions/css-questions.js';
-import { javascriptQuestions } from '../questions/javascript-questions.js';
-import { cPlusPlusQuestions } from '../questions/cPlusPlus-questions.js';
+// questions for each language stored per language in a data folder so they can be easily maintained
+import { pythonQuestions } from '../data/questions/python-questions.js';
+import { cssQuestions } from '../data/questions/css-questions.js';
+import { javascriptQuestions } from '../data/questions/javascript-questions.js';
+import { cPlusPlusQuestions } from '../data/questions/cPlusPlus-questions.js';
 
-import { pythonBookRecommendations } from '../recommended-books/python-book-recommendations.js';
-import { cssBookRecommendations } from '../recommended-books/css-book-recommendations.js';
-import { javascriptBookRecommendations } from '../recommended-books/javascript-book-recommendations.js';
-import { cPlusPlusBookRecommendations } from '../recommended-books/cPlusPlus-book-recommendations.js';
+// book recommendations stored in the same location for ease of maintainence
+import { pythonBookRecommendations } from '../data/recommended-books/python-book-recommendations.js';
+import { cssBookRecommendations } from '../data/recommended-books/css-book-recommendations.js';
+import { javascriptBookRecommendations } from '../data/recommended-books/javascript-book-recommendations.js';
+import { cPlusPlusBookRecommendations } from '../data/recommended-books/cPlusPlus-book-recommendations.js';
 
 let pythonQuestionsAsked = [];
 let cssQuestionsAsked = [];

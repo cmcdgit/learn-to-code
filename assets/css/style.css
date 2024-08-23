@@ -170,7 +170,7 @@ button {
 #questionBox {
     background-color: antiquewhite;
     border: solid;
-    width: 100%;
+    /* width: 100%;  */
     align-items: center;
     padding: 25px;
     border-radius: 20px;
