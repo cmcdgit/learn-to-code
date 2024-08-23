@@ -157,7 +157,7 @@ export const pythonQuestions = [
     },
     {
         "question": "What is the output of the following code?\nprint([i.lower() for i in 'PYTHON'])",
-        "options": ["['python']", "['p', 'y', 't', 'h', 'o', 'n']", "['P', 'Y', 'T', 'H', 'O', 'N']", "['p', 'y', 't', 'h', 'o', 'n']"],
+        "options": ["['python']", "['p', 'y', 't', 'h', 'o', 'n']", "['P', 'Y', 'T', 'H', 'O', 'N']", "{'p', 'y', 't', 'h', 'o', 'n'}"],
         "answer": "['p', 'y', 't', 'h', 'o', 'n']",
         "difficulty": "Hard"
     },

@@ -98,7 +98,7 @@ function endGame() {
     document.getElementById("final-wrong-answers-total").textContent = finalWrongAnswersTotal;
 
     let resultsBox = document.getElementById("resultsBox");
-    resultsBox.style.display = "block";
+    resultsBox.style.display = "flex";
 
     let questionBox = document.getElementById("questionBox");
     questionBox.style.display = "none"
@@ -107,7 +107,7 @@ function endGame() {
 function displayQuestion(questionsAsked, questions) {
 
     let questionBox = document.getElementById("questionBox");
-    questionBox.style.display = "block";
+    questionBox.style.display = "flex";
 
     let randomNum = getUniqueRandomNumber(questionsAsked, 29);
 
@@ -162,9 +162,10 @@ function incrementTotal(answerType) {
  * logic below is for recommended books section
  */
 
-
 function displayRecommendedBooks(language) {
     let bookRecommendations;
+
+    document.getElementById("all-books").style.display = "flex";
 
     switch (language) {
         case "python":
@@ -195,7 +196,12 @@ function displayRecommendedBooks(language) {
         document.getElementById(`book${bookIndex}-author`).textContent = author;
         document.getElementById(`book${bookIndex}-description`).textContent = description;
         document.getElementById(`book${bookIndex}-best_for`).textContent = best_for;
-        document.getElementById(`book${bookIndex}-amazon_link`).textContent = amazon_link;
+        document.getElementById(`book${bookIndex}-amazon_link`).href = amazon_link;
+
+        // console.log(document.getElementsByClassName("book")[bookIndex])
+
+        document.getElementsByClassName('book')[bookIndex].style.backgroundImage = `url("${cover_image}")`
+        //  no-repeat center center/cover;`
 
     }
 }

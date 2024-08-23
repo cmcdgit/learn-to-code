@@ -83,7 +83,7 @@ export const cPlusPlusQuestions = [
             "malloc()",
             "calloc()",
             "new",
-            "All of the above"
+            "All of these options"
         ],
         "answer": "new"
     },
@@ -149,9 +149,9 @@ export const cPlusPlusQuestions = [
             "A function that is called automatically when an object is created.",
             "A function that has the same name as the class and does not return any value.",
             "A function that can have default arguments.",
-            "All of the above"
+            "All of these options"
         ],
-        "answer": "All of the above"
+        "answer": "All of these options"
     },
     {
         "question": "Which of the following is true about templates in C++?",
@@ -270,7 +270,7 @@ export const cPlusPlusQuestions = [
             "catch",
             "try",
             "throw",
-            "All of the above"
+            "All of these options"
         ],
         "answer": "catch"
     },
@@ -314,8 +314,8 @@ export const cPlusPlusQuestions = [
             "Smart pointers automatically manage memory by deleting the object when it is no longer in use.",
             "Smart pointers are a C++11 feature.",
             "Smart pointers can prevent memory leaks and dangling pointers.",
-            "All of the above"
+            "All of these options"
         ],
-        "answer": "All of the above"
+        "answer": "All of these options"
     }
 ]

@@ -62,30 +62,33 @@
         <div class="with-border">
             <section id="computer-image">
                 <div id="questionBox">
-                    <div class="difficulty-area">
+                    <div id="difficulty-area">
                         <p>Difficulty: <span id="difficulty-rating"></span></p>
                     </div>
                     <div id="question"></div>
                     <div id="answer-options-box">
-                        <button id="option0" selection="0"></button>
-                        <button id="option1" selection="1"></button>
-                        <button id="option2" selection="2"></button>
-                        <button id="option3" selection="3"></button>
+                        <button class="button-sizing" id="option0" selection="0"></button>
+                        <div class="space-between"></div>
+                        <button class="button-sizing" id="option1" selection="1"></button>
+                        <div class="space-between"></div>
+                        <button class="button-sizing" id="option2" selection="2"></button>
+                        <div class="space-between"></div>
+                        <button class="button-sizing" id="option3" selection="3"></button>
                     </div>
                     <div class="score-area">
-                        <p>Right Answers <span id="right-answers-total">0</span></p>
-                        <p>Wrong Answers <span id="wrong-answers-total">0</span></p>
+
+                        <p>Right <span id="right-answers-total">0</span> / Wrong <span id="wrong-answers-total">0</span></p>
                     </div>
                 </div>
 
                 <div id="resultsBox">
                     <div class="final-score">
-                        <p>You got <span id="final-right-answers-total">0</span>/20 right</p>
-                        <p>and...  <span id="final-wrong-answers-total">0</span> wrong</p>
-                        <div>
-                            <p>
-                                Select a language above to play again
-                            </p>
+                        <div id="score-output">
+                            <p>You got <span id="final-right-answers-total" class="bold">0</span>/20 right or...  <span id="final-wrong-answers-total" class="bold">0</span> wrong</p>
+                            <p>...depending on how you view the world :)</p>
+                        </div>
+                        <div id="play-again-msg">
+                            <p>Select a language above to play again</p>
                         </div>
                     </div>
                 </div>

@@ -134,21 +134,24 @@ footer {
 }
 
 #all-books {
-    /* flex-direction: row; */
-    display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    padding-bottom: 1.5em;
     display: none;
 }
 
 .book {
+    background: no-repeat center center/cover;
     background-color: antiquewhite;
     border: solid;
     width: 270px;
     height: 400px;
     margin: 25px;
     padding: 35px;
+    border-radius: 20px;
+}
+
+button {
+    padding: 2%;
     border-radius: 20px;
 }
 
@@ -171,15 +174,59 @@ footer {
     background-color: rgb(253, 246, 241);
 }
 
+#difficulty-rating {
+    font-weight: bold;
+}
+
 #questionBox {
     background-color: antiquewhite;
     border: solid;
     width: 100%;
     align-items: center;
     padding: 25px;
-    padding-top: 20%;
+    /* padding-top: 20%; */
     border-radius: 20px;
     display: none;
+    flex-direction: column;
+}
+
+#question {
+    padding-top: 5%;
+    font-size: 190%;
+}
+
+#difficulty-area {
+    border: solid;
+    border-radius: 20px;
+    padding: 5px;
+
+}
+
+#score-area {
+    margin-bottom: auto;
+}
+
+#score-output {
+    font-size: 150%;
+    text-align: center;
+}
+
+#answer-options-box {
+    display: flex;
+    padding: 5%;
+    justify-content: space-evenly;
+}
+
+.space-between {
+    width: 20px;
+    height: auto;
+    display: inline-block;
+}
+
+.button-sizing {
+    width: auto;
+    height: auto;
+    padding: 20px;
 }
 
 #resultsBox {
@@ -188,9 +235,20 @@ footer {
     width: 100%;
     align-items: center;
     padding: 25px;
-    padding-top: 20%;
+    /* padding-top: 20%; */
     border-radius: 20px;
     display: none;
+    flex-direction: column;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#play-again-msg {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 10%;
 }
 
 #computer-image {
@@ -201,9 +259,8 @@ footer {
 }
 
 #coding-books-image {
-    height: 700px;
-    width: 70%;
+    height: 1200px;
     align-items: center;
-    background: url("../images/coding-books.jpg") no-repeat center center/cover;
+    background: url("../images/library.jpg") no-repeat center center/cover;
     border-radius: 20px;
 }
