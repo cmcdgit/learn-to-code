@@ -46,6 +46,7 @@ header a {
     padding-bottom: .5em;
 }
 
+/* typo here? */
 options > li {
     margin-bottom: 1.2em;
 }
@@ -138,9 +139,10 @@ footer {
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding-bottom: 1.5em;
+    display: none;
 }
 
-#book {
+.book {
     background-color: antiquewhite;
     border: solid;
     width: 270px;
@@ -195,5 +197,13 @@ footer {
     height: 1200px;
     background: url("../images/laptop.jpg") no-repeat center center/cover;
     align-items: center;
+    border-radius: 20px;
+}
+
+#coding-books-image {
+    height: 700px;
+    width: 70%;
+    align-items: center;
+    background: url("../images/coding-books.jpg") no-repeat center center/cover;
     border-radius: 20px;
 }

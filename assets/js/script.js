@@ -21,18 +21,25 @@ let questionCounter;
 
 document.addEventListener("DOMContentLoaded", function() {
     let options = document.getElementsByTagName('button');
+    let currentPage = document.getElementsByTagName('body')[0].getAttribute("page");
 
     for (let option of options) {
         option.addEventListener('click', function() {
             let language = this.getAttribute("language");
             let selection = this.getAttribute("selection");
 
-            if (!selection && language) {
-                resetAllQuestionsAskedArrays(); //todo: is this the correct place to reset????
-                takeQuiz(language);
-            } else if (!language && selection) {
-                checkForCorrectAnswer(selection);
+            if(currentPage === "index") {
+                if (!selection && language) {
+                    resetAllQuestionsAskedArrays(); //todo: is this the correct place to reset????
+                    takeQuiz(language);
+                } else if (!language && selection) {
+                    checkForCorrectAnswer(selection);
+                }
+            } else if(currentPage === "books") {
+                 displayRecommendedBooks(language);
             }
+
+
         })
     }
 })
@@ -148,5 +155,48 @@ function checkForCorrectAnswer(selection) {
 function incrementTotal(answerType) {
     let currentTotal = parseInt(document.getElementById(answerType).innerText);
     document.getElementById(answerType).textContent = ++currentTotal;
+}
+
+
+/**
+ * logic below is for recommended books section
+ */
+
+
+function displayRecommendedBooks(language) {
+    let bookRecommendations;
+
+    switch (language) {
+        case "python":
+            bookRecommendations = pythonBookRecommendations;
+            break;
+        case "css":
+            bookRecommendations = cssBookRecommendations;
+            break;
+        case "javascript":
+            bookRecommendations = javascriptBookRecommendations;
+            break;
+        case "c++":
+            bookRecommendations = cPlusPlusBookRecommendations;
+                break;
+        default:
+            break;
+    }
+
+    for (let bookIndex = 0; bookIndex < bookRecommendations.length; bookIndex++) {
+        let amazon_link = bookRecommendations[bookIndex]["amazon_link"];
+        let author = bookRecommendations[bookIndex]["author"];
+        let best_for = bookRecommendations[bookIndex]["best_for"];
+        let cover_image = bookRecommendations[bookIndex]["cover_image"];
+        let description = bookRecommendations[bookIndex]["description"];
+        let title = bookRecommendations[bookIndex]["title"];
+
+        document.getElementById(`book${bookIndex}-title`).textContent = title;
+        document.getElementById(`book${bookIndex}-author`).textContent = author;
+        document.getElementById(`book${bookIndex}-description`).textContent = description;
+        document.getElementById(`book${bookIndex}-best_for`).textContent = best_for;
+        document.getElementById(`book${bookIndex}-amazon_link`).textContent = amazon_link;
+
+    }
 }
 
