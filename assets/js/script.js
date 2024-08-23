@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let selection = this.getAttribute('data-selection');
 
       if (currentPage === 'index') {
+        // check if the user wishes to set a language or is answering a quiz question
         if (!selection && language) {
           document.getElementById('right-answers-total').textContent = 0;
           document.getElementById('wrong-answers-total').textContent = 0;
@@ -43,6 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+/**
+ *
+ */
 function takeQuiz(language) {
   questionCounter = 0;
 
@@ -62,6 +66,9 @@ function takeQuiz(language) {
   displayQuestion(currentQuestions);
 }
 
+/**
+ * this function returns a random number so a unique question is asked
+ */
 function getUniqueRandomNumber(askedArray, maxNumber) {
   let questionNum;
   do {
@@ -72,6 +79,9 @@ function getUniqueRandomNumber(askedArray, maxNumber) {
   return questionNum;
 }
 
+/**
+ * this function handles what happens at the end of a game, presents the result and resets running totals
+ */
 function endGame() {
   let finalRightAnswersTotal = parseInt(
     document.getElementById('right-answers-total').innerText
@@ -94,6 +104,9 @@ function endGame() {
   questionBox.style.display = 'none';
 }
 
+/**
+ * this function displays a new question when starting or continuing to play, games last 20 questions only
+ */
 function displayQuestion(questions) {
   let questionBox = document.getElementById('questionBox');
   questionBox.style.display = 'flex';
@@ -106,13 +119,13 @@ function displayQuestion(questions) {
     questions[randomNum]['question'];
 
   // set difficulty level in question box
+  // TODO: set colour code GREEN, AMBER, RED based on difficulty
   document.getElementById('difficulty-rating').textContent =
     questions[randomNum]['difficulty'];
 
-  // TODO: set colour code GREEN, AMBER, RED based on difficulty
-
+  // the listOfOptions and the following for loop allows for the four possible answers to be
+  //  displayed randomly rather than in the same order each time
   let listOfOptions = ['option0', 'option1', 'option2', 'option3'];
-
   let usedNums = [];
   for (let option of listOfOptions) {
     let randomOption = getUniqueRandomNumber(usedNums, 4);
@@ -121,6 +134,10 @@ function displayQuestion(questions) {
   }
 }
 
+/**
+ *  this function checks the selected answer against the correct answer and increments either
+ *  the right or wrong running total, it also checks only 20 questions are asked
+ */
 function checkForCorrectAnswer(selection) {
   let guessedAnswer = document.getElementById(`option${selection}`).innerText;
 
@@ -138,6 +155,9 @@ function checkForCorrectAnswer(selection) {
   }
 }
 
+/**
+ * this function handles incrementing both the right and wrong totals by accepting an answerType value
+ */
 function incrementTotal(answerType) {
   let currentTotal = parseInt(document.getElementById(answerType).innerText);
   document.getElementById(answerType).textContent = ++currentTotal;
@@ -147,6 +167,10 @@ function incrementTotal(answerType) {
  * logic below is for recommended books section
  */
 
+/**
+ * this function displays relevant book recommendations based on user input, including
+ * a background image of the book's cover
+ */
 function displayRecommendedBooks(language) {
   let bookRecommendations;
 
@@ -169,6 +193,8 @@ function displayRecommendedBooks(language) {
       break;
   }
 
+  // this code loops the recommendations for the coding language selected and builds the
+  // recommendation tiles from the relevant recommendations array
   for (let bookIndex = 0; bookIndex < bookRecommendations.length; bookIndex++) {
     let amazon_link = bookRecommendations[bookIndex]['amazon_link'];
     let author = bookRecommendations[bookIndex]['author'];
@@ -184,11 +210,8 @@ function displayRecommendedBooks(language) {
     document.getElementById(`book${bookIndex}-best_for`).textContent = best_for;
     document.getElementById(`book${bookIndex}-amazon_link`).href = amazon_link;
 
-    // console.log(document.getElementsByClassName("book")[bookIndex])
-
     document.getElementsByClassName('book')[
       bookIndex
     ].style.backgroundImage = `url("${cover_image}")`;
-    //  no-repeat center center/cover;`
   }
 }
