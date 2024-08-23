@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/cmcdgit/learn-to-code/issues"
   },
-  "homepage": "https://github.com/cmcdgit/learn-to-code#readme"
+  "homepage": "https://github.com/cmcdgit/learn-to-code#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "eslint": "^9.9.0",
+    "globals": "^15.9.0"
+  }
 }
