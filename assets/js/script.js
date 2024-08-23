@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if(currentPage === "index") {
                 if (!selection && language) {
+                    document.getElementById("right-answers-total").textContent = 0;
+                    document.getElementById("wrong-answers-total").textContent = 0;
                     resetAllQuestionsAskedArrays(); //todo: is this the correct place to reset????
                     takeQuiz(language);
                 } else if (!language && selection) {
