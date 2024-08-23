@@ -18,7 +18,7 @@
     <title>Learn To Code</title>
 </head>
 
-<body page="index">
+<body data-page="index">
 
     <header>
         <a href="index.html">
@@ -27,7 +27,6 @@
         <input type="checkbox" name="nav-toggle" id="nav-toggle">
         <label for="nav-toggle" class="nav-toggle-label">
             <i class="nav-toggle-display fa-solid fa-ellipsis"></i>
-            <!-- TODO (remove?): <i class="nav-toggle-hide"></i> -->
         </label>
         <nav>
             <ul id="options">
@@ -42,42 +41,44 @@
             test yourself on?
         </h2>
         <div id="language-options">
-            <button id="language" language="python">
-                <div class="button-centered">
+            <button class="language" data-language="python">
+                <span class="button-centered">
                     python
-                </div>
+                </span>
             </button>
-            <button id="language" language="css">
-                <div class="button-centered">
+            <button class="language" data-language="css">
+                <span class="button-centered">
                     css
-                </div>
+                </span>
             </button>
-            <button id="language" language="javascript">
-                <div class="button-centered">
+            <button class="language" data-language="javascript">
+                <span class="button-centered">
                     javascript
-                </div>
+                </span>
             </button>
-            <button id="language" language="c++">
-                <div class="button-centered">
+            <button class="language" data-language="c++">
+                <span class="button-centered">
                     c++
-                </div>
+                </span>
             </button>
         </div>
         <div class="with-border">
             <section id="computer-image">
+                <!-- dummy heading created to satisfy w3 validator-->
+                <h6></h6>
                 <div id="questionBox">
                     <div id="difficulty-area">
                         <p>Difficulty: <span id="difficulty-rating"></span></p>
                     </div>
                     <div id="question"></div>
                     <div id="answer-options-box">
-                        <button class="button-sizing" id="option0" selection="0"></button>
+                        <button class="button-sizing" id="option0" data-selection="0"></button>
                         <div class="space-between"></div>
-                        <button class="button-sizing" id="option1" selection="1"></button>
+                        <button class="button-sizing" id="option1" data-selection="1"></button>
                         <div class="space-between"></div>
-                        <button class="button-sizing" id="option2" selection="2"></button>
+                        <button class="button-sizing" id="option2" data-selection="2"></button>
                         <div class="space-between"></div>
-                        <button class="button-sizing" id="option3" selection="3"></button>
+                        <button class="button-sizing" id="option3" data-selection="3"></button>
                     </div>
                     <div class="score-area">
                         <p>Right <span id="right-answers-total">0</span> / Wrong <span id="wrong-answers-total">0</span>

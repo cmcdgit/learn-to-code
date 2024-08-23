@@ -22,12 +22,12 @@ document.addEventListener('DOMContentLoaded', function () {
   let options = document.getElementsByTagName('button');
   let currentPage = document
     .getElementsByTagName('body')[0]
-    .getAttribute('page');
+    .getAttribute('data-page');
 
   for (let option of options) {
     option.addEventListener('click', function () {
-      let language = this.getAttribute('language');
-      let selection = this.getAttribute('selection');
+      let language = this.getAttribute('data-language');
+      let selection = this.getAttribute('data-selection');
 
       if (currentPage === 'index') {
         if (!selection && language) {

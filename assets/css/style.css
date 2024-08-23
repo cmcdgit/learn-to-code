@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    background-color:slategrey ;
+    background-color: slategrey;
     text-align: center;
     padding: 0 1rem;
     padding-top: 25px;
@@ -24,14 +24,11 @@ header {
     width: 100%;
     z-index: 99;
     box-shadow: 0 2px 2px #313f31;
-    /* display: flex; */
-    /* justify-content: space-between; */
-    /* align-items: baseline; */
 }
 
 header a {
     font-size: 130%;
-    color:lightseagreen;
+    color: lightseagreen;
     text-decoration: none;
 }
 
@@ -46,19 +43,12 @@ header a {
     padding-bottom: .5em;
 }
 
-/* typo here? */
-options > li {
-    margin-bottom: 1.2em;
-}
-
 #language-options {
-    /* flex-direction: row; */
     display: flex;
     font-size: 110%;
     padding-top: 0.5em;
     padding-bottom: 2px;
     justify-content: space-evenly;
-    /* text-align: center; */
 }
 
 .active {
@@ -91,11 +81,11 @@ nav {
 }
 
 .nav-toggle-label:hover {
-    color:  antiquewhite;
+    color: antiquewhite;
 }
 
 main {
-    background-color:darkslategrey;
+    background-color: darkslategrey;
     flex: 1 0 auto;
     margin-top: 119px;
 }
@@ -160,9 +150,8 @@ button {
     align-items: center;
 }
 
-#language {
+.language {
     background-color: antiquewhite;
-    /* border: solid; */
     display: flex;
     width: 20%;
     align-items: center;
@@ -170,7 +159,7 @@ button {
     border-radius: 20px;
 }
 
-#language:hover {
+.language:hover {
     background-color: rgb(253, 246, 241);
 }
 
@@ -184,7 +173,6 @@ button {
     width: 100%;
     align-items: center;
     padding: 25px;
-    /* padding-top: 20%; */
     border-radius: 20px;
     display: none;
     flex-direction: column;
@@ -235,7 +223,6 @@ button {
     width: 100%;
     align-items: center;
     padding: 25px;
-    /* padding-top: 20%; */
     border-radius: 20px;
     display: none;
     flex-direction: column;
