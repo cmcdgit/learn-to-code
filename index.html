@@ -20,6 +20,7 @@
 
 <body data-page="index">
 
+    <!-- HEADER -->
     <header>
         <a href="index.html">
             <h1 id="logo">learn_to_code</h1>
@@ -28,6 +29,7 @@
         <label for="nav-toggle" class="nav-toggle-label">
             <i class="nav-toggle-display fa-solid fa-ellipsis"></i>
         </label>
+        <!-- Dropdown menu -->
         <nav>
             <ul id="options">
                 <li><a href="index.html" class="active">test_your_coding_skills</a></li>
@@ -36,10 +38,12 @@
         </nav>
     </header>
 
+    <!-- Main section -->
     <main>
         <h2 class="centered">
             test yourself on?
         </h2>
+        <!-- language selection section for small screens -->
         <div id="language-options-small">
             <button class="language" data-language="python">
                 <span class="button-centered">
@@ -62,6 +66,8 @@
                 </span>
             </button>
         </div>
+
+        <!-- language selection section for large screens -->
         <div id="language-options-large">
             <button class="language" data-language="python">
                 <span class="button-centered">
@@ -86,8 +92,9 @@
         </div>
         <div class="with-border">
             <section id="computer-image">
-                <!-- dummy heading created to satisfy w3 validator-->
+                <!-- dummy heading created to satisfy w3 validator (still gives a warning)-->
                 <h6></h6>
+                <!-- question display box -->
                 <div id="questionBox">
                     <div id="difficulty-area">
                         <p><span id="difficulty-rating"></span></p>
@@ -110,6 +117,7 @@
                     </div>
                 </div>
 
+                <!-- Results box that displays after game completes -->
                 <div id="resultsBox">
                     <div class="final-score">
                         <div id="score-output">
@@ -127,6 +135,7 @@
         </div>
     </main>
 
+    <!-- FOOTER - with social links -->
     <footer>
         <ul id="social-media-links">
             <li>

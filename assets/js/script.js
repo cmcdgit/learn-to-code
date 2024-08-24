@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /**
- *
+ * logic to determine the correct questions to provide to the user based on their selection
  */
 function takeQuiz(language) {
   questionCounter = 0;

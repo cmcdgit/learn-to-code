@@ -124,10 +124,6 @@ footer {
 }
 
 .button-centered {
-    /* display: flex; */
-    /* align-items: center; */
-    /* font-size: 70%; */
-    /* text-align: center; */
     color: darkslategrey;
     margin-left: auto;
     margin-right: auto;
@@ -284,7 +280,7 @@ button {
     border-radius: 20px;
 }
 
-#coding-books-image {
+#code-image {
     height: auto;
     align-items: center;
     background: url("../images/coding-dark-image.jpg") no-repeat center center/cover;
@@ -354,7 +350,7 @@ button {
         height: 1200px;
     }
 
-    #coding-books-image {
+    #code-image {
         height: 4600px;
     }
 
@@ -362,48 +358,29 @@ button {
         font-size: 100%;
     }
 
-    /* .button-sizing {
-        padding: 15px;
-        font-size: 90%;
-        width: 150px;
-    } */
-
     .button-sizing {
         font-size: 130%;
     }
 
     .button-centered {
-        /* TODO: confirm this sizing */
         font-size: 120%;
     }
 
     #options {
-        /* TODO: confirm this sizing */
         font-size: 110%;
     }
 
     main {
-        /* TODO - confirm this sizing */
         margin-top: 107px;
     }
 
     .centered {
-        /* TODO - confirm this sizing */
         font-size: 220%;
     }
 
     #question {
-        /* TODO - confirm padding here */
         font-size: 240%;
     }
-
-    /* #answer-options-box {
-        padding-left: 10px;
-        padding-right: 10px;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-    } */
 
     #logo {
         font-size: 250%;
@@ -413,14 +390,6 @@ button {
 
 /* Media query for laptops and larger (>= 992px) */
 @media screen and (min-width: 992px) {
-    /* #answer-options-box {
-        padding-left: 10px;
-        padding-right: 10px;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-    } */
-
     .button-sizing {
         font-size: 150%;
     }
@@ -428,7 +397,7 @@ button {
 
 /* Media query for laptops and larger (>= 1024px) */
 @media screen and (min-width: 1024px) {
-    #coding-books-image {
+    #code-image {
         height: 2400px;
     }
 
@@ -444,7 +413,6 @@ button {
         padding-left: 10px;
         padding-right: 10px;
         flex-direction: row;
-        /* flex-wrap: wrap; */
         align-items: center;
     }
 }

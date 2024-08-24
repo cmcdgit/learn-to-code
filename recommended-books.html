@@ -20,6 +20,7 @@
 
 <body data-page="books">
 
+    <!-- HEADER_SECTION -->
     <header>
         <a href="index.html">
             <h1 id="logo">learn_to_code</h1>
@@ -27,7 +28,6 @@
         <input type="checkbox" name="nav-toggle" id="nav-toggle">
         <label for="nav-toggle" class="nav-toggle-label">
             <i class="nav-toggle-display fa-solid fa-ellipsis"></i>
-            <!-- <i class="nav-toggle-hide"></i> -->
         </label>
         <nav>
             <ul id="options">
@@ -37,10 +37,12 @@
         </nav>
     </header>
 
+    <!-- MAIN_SECTION -->
     <main>
         <h2 class="centered">
             recommended_books
         </h2>
+        <!-- Programming language options for smaller screens - hidden on large -->
         <div id="language-options-small">
             <button class="language" data-language="python">
                 <span class="button-centered">
@@ -63,6 +65,7 @@
                 </span>
             </button>
         </div>
+        <!-- Programming language options for larger screens - hidden on small -->
         <div id="language-options-large">
             <button class="language" data-language="python">
                 <span class="button-centered">
@@ -87,8 +90,10 @@
         </div>
         <br>
         <div class="with-border">
-            <section id="coding-books-image">
+            <section id="code-image">
+                <!-- dummy heading created to satisfy w3 validator (still gives a warning)-->
                 <h6></h6>
+                <!-- Recommended books section -->
                 <div id="all-books">
                     <!-- book1 -->
                     <div id="book0" class="book">
@@ -113,7 +118,6 @@
                                 <a href="" id="book0-amazon_link" target="_blank">amazon</a>
                             </div>
                         </div>
-                        <!-- <span id="book0-amazon_link">""</span> -->
                     </div>
                     <!-- book2 -->
                     <div id="book1" class="book">
@@ -336,6 +340,7 @@
         </div>
     </main>
 
+    <!-- FOOTER - social media (dummy links) -->
     <footer>
         <ul id="social-media-links">
             <li>
