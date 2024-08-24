@@ -117,7 +117,7 @@ footer {
 }
 
 .centered {
-    font-size: 120%;
+    font-size: 150%;
     padding-top: 1em;
     padding-bottom: 40px;
     text-align: center;
@@ -150,6 +150,10 @@ footer {
     border-radius: 20px;
 }
 
+.book-details {
+    display: none;
+}
+
 button {
     padding: 2%;
     border-radius: 20px;
@@ -180,7 +184,7 @@ button {
 #questionBox {
     background-color: antiquewhite;
     border: solid;
-    width: 280px;
+    width: 250px;
     align-items: center;
     padding: 25px;
     border-radius: 20px;
@@ -267,13 +271,14 @@ button {
 }
 
 #play-again-msg {
+    font-size: 110%;
     text-align: center;
     font-weight: bold;
     padding-top: 10%;
 }
 
 #computer-image {
-    height: 1000px;
+    height: 1100px;
     background: url("../images/laptop.jpg") no-repeat center center/cover;
     align-items: center;
     border-radius: 20px;
@@ -282,8 +287,36 @@ button {
 #coding-books-image {
     height: auto;
     align-items: center;
-    background: url("../images/library.jpg") no-repeat center center/cover;
+    background: url("../images/coding-dark-image.jpg") no-repeat center center/cover;
     border-radius: 20px;
+}
+
+
+/* Media query: tablets and larger (330px and larger)*/
+@media screen and (min-width: 330px) {
+    #questionBox {
+        width: 306px;
+    }
+
+    .book-details {
+        display: block;
+        font-size: 80%;
+    }
+}
+
+/* Media query: tablets and larger (425px and larger)*/
+@media screen and (min-width: 425px) {
+    #questionBox {
+        width: 356px;
+    }
+
+    #question {
+        font-size: 120%;
+    }
+
+    .button-sizing {
+        font-size: 100%;
+    }
 }
 
 /* Media query: tablets and larger (768px and larger)*/
@@ -310,6 +343,7 @@ button {
 
     #questionBox {
         width: 100%;
+        align-items: center;
     }
 
     #score-area {
@@ -321,7 +355,11 @@ button {
     }
 
     #coding-books-image {
-        height: 2300px;
+        height: 4600px;
+    }
+
+    .book-details {
+        font-size: 100%;
     }
 
     /* .button-sizing {
@@ -331,12 +369,7 @@ button {
     } */
 
     .button-sizing {
-        display: flex;
-        flex-wrap: wrap;
         font-size: 130%;
-        width: auto;
-        height: auto;
-        padding: 20px;
     }
 
     .button-centered {
@@ -356,7 +389,7 @@ button {
 
     .centered {
         /* TODO - confirm this sizing */
-        font-size: 210%;
+        font-size: 220%;
     }
 
     #question {
@@ -380,12 +413,6 @@ button {
 
 /* Media query for laptops and larger (>= 992px) */
 @media screen and (min-width: 992px) {
-    #coding-books-image {
-        background: url("../images/coding-dark-image.jpg") no-repeat center center/cover;
-        /* height: 0px; */
-
-    }
-
     /* #answer-options-box {
         padding-left: 10px;
         padding-right: 10px;
@@ -396,12 +423,23 @@ button {
 
     .button-sizing {
         font-size: 150%;
-        padding: 20px;
     }
 }
 
-/* Media query for laptops and larger (>= 1200px) */
-@media screen and (min-width: 1200px) {
+/* Media query for laptops and larger (>= 1024px) */
+@media screen and (min-width: 1024px) {
+    #coding-books-image {
+        height: 2400px;
+    }
+
+    .book-details {
+        display: block;
+        font-size: 80%;
+    }
+}
+
+/* Media query for laptops and larger (>= 1280px) */
+@media screen and (min-width: 1280px) {
     #answer-options-box {
         padding-left: 10px;
         padding-right: 10px;
