@@ -27,7 +27,7 @@ header {
 }
 
 header a {
-    font-size: 130%;
+    font-size: 100%;
     color: lightseagreen;
     text-decoration: none;
 }
@@ -37,7 +37,7 @@ header a {
 }
 
 #options {
-    font-size: 110%;
+    font-size: 90%;
     letter-spacing: 3px;
     list-style-type: none;
     padding-bottom: .5em;
@@ -46,8 +46,7 @@ header a {
 #language-options {
     display: flex;
     font-size: 110%;
-    padding-top: 0.5em;
-    padding-bottom: 2px;
+    padding-top: 15px;
     justify-content: space-evenly;
 }
 
@@ -87,12 +86,13 @@ nav {
 main {
     background-color: darkslategrey;
     flex: 1 0 auto;
-    margin-top: 119px;
+    margin-top: 107px;
 }
 
 footer {
     background-color: antiquewhite;
     font-size: 130%;
+    bottom: 0%;
 }
 
 #social-media-links {
@@ -110,14 +110,17 @@ footer {
 }
 
 .centered {
-    font-size: 210%;
-    padding-top: 0.5em;
+    font-size: 120%;
+    padding-top: 1em;
     padding-bottom: 40px;
     text-align: center;
 }
 
 .button-centered {
-    font-size: 120%;
+    /* display: flex; */
+    /* align-items: center; */
+    /* font-size: 70%; */
+    /* text-align: center; */
     color: darkslategrey;
     margin-left: auto;
     margin-right: auto;
@@ -179,8 +182,9 @@ button {
 }
 
 #question {
-    padding-top: 5%;
-    font-size: 190%;
+    text-align: center;
+    padding: 10% 10px;
+    font-size: 130%;
 }
 
 #difficulty-area {
@@ -192,6 +196,7 @@ button {
 
 #score-area {
     margin-bottom: auto;
+    text-align: center;
 }
 
 #score-output {
@@ -201,7 +206,11 @@ button {
 
 #answer-options-box {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
     padding: 5%;
+    gap: 10px;
     justify-content: space-evenly;
 }
 
@@ -212,8 +221,8 @@ button {
 }
 
 .button-sizing {
-    font-size: 110%;
-    width: auto;
+    font-size: 70%;
+    width: 150px;
     height: auto;
     padding: 20px;
 }
@@ -266,4 +275,54 @@ button {
     align-items: center;
     background: url("../images/library.jpg") no-repeat center center/cover;
     border-radius: 20px;
+}
+
+/* Media query: tablets and larger (768px and larger)*/
+@media screen and (min-width: 768px) {
+    .button-centered {
+        font-size: 120%;
+        color: darkslategrey;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    header a {
+        font-size: 130%;
+        color: lightseagreen;
+        text-decoration: none;
+    }
+
+    #options {
+        font-size: 110%;
+        letter-spacing: 3px;
+        list-style-type: none;
+        padding-bottom: .5em;
+    }
+
+    main {
+        background-color: darkslategrey;
+        flex: 1 0 auto;
+        /* height: fit-content; */
+        margin-top: 119px;
+    }
+
+    .centered {
+        font-size: 210%;
+        padding-top: 0.5em;
+        padding-bottom: 40px;
+        text-align: center;
+    }
+
+    #question {
+        text-align: center;
+        padding-top: 5%;
+        font-size: 190%;
+    }
+
+    .button-sizing {
+        font-size: 110%;
+        width: auto;
+        height: auto;
+        padding: 20px;
+    }
 }
