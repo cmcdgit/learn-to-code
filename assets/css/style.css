@@ -43,7 +43,14 @@ header a {
     padding-bottom: .5em;
 }
 
-#language-options {
+#language-options-large {
+    display: none;
+    font-size: 110%;
+    padding-top: 15px;
+    justify-content: space-evenly;
+}
+
+#language-options-small {
     display: flex;
     font-size: 110%;
     padding-top: 15px;
@@ -149,7 +156,7 @@ button {
 }
 
 .with-border {
-    padding: 75px;
+    padding: 35px;
     align-items: center;
 }
 
@@ -173,7 +180,7 @@ button {
 #questionBox {
     background-color: antiquewhite;
     border: solid;
-    /* width: 100%;  */
+    width: 280px;
     align-items: center;
     padding: 25px;
     border-radius: 20px;
@@ -190,12 +197,12 @@ button {
 #difficulty-area {
     border: solid;
     border-radius: 20px;
-    padding: 5px;
+    padding: 10px;
 
 }
 
 #score-area {
-    margin-bottom: auto;
+    margin-bottom: 40px;
     text-align: center;
 }
 
@@ -221,8 +228,10 @@ button {
 }
 
 .button-sizing {
+    display: flex;
+    flex-wrap: wrap;
     font-size: 70%;
-    width: 150px;
+    width: auto;
     height: auto;
     padding: 20px;
 }
@@ -264,14 +273,14 @@ button {
 }
 
 #computer-image {
-    height: 1200px;
+    height: 1000px;
     background: url("../images/laptop.jpg") no-repeat center center/cover;
     align-items: center;
     border-radius: 20px;
 }
 
 #coding-books-image {
-    height: 1200px;
+    height: auto;
     align-items: center;
     background: url("../images/library.jpg") no-repeat center center/cover;
     border-radius: 20px;
@@ -279,50 +288,125 @@ button {
 
 /* Media query: tablets and larger (768px and larger)*/
 @media screen and (min-width: 768px) {
-    .button-centered {
-        font-size: 120%;
-        color: darkslategrey;
-        margin-left: auto;
-        margin-right: auto;
+    .with-border {
+        padding: 75px;
     }
 
-    header a {
-        font-size: 130%;
-        color: lightseagreen;
-        text-decoration: none;
+    #language-options-large {
+        display: flex;
     }
 
-    #options {
+    #language-options-small {
+        display: none;
+    }
+
+    .language {
         font-size: 110%;
-        letter-spacing: 3px;
-        list-style-type: none;
-        padding-bottom: .5em;
     }
 
-    main {
-        background-color: darkslategrey;
-        flex: 1 0 auto;
-        /* height: fit-content; */
-        margin-top: 119px;
+    #difficulty-rating {
+        font-size: 130%;
     }
 
-    .centered {
-        font-size: 210%;
-        padding-top: 0.5em;
-        padding-bottom: 40px;
-        text-align: center;
+    #questionBox {
+        width: 100%;
     }
 
-    #question {
-        text-align: center;
-        padding-top: 5%;
-        font-size: 190%;
+    #score-area {
+        margin-bottom: auto;
     }
+
+    #computer-image {
+        height: 1200px;
+    }
+
+    #coding-books-image {
+        height: 2300px;
+    }
+
+    /* .button-sizing {
+        padding: 15px;
+        font-size: 90%;
+        width: 150px;
+    } */
 
     .button-sizing {
-        font-size: 110%;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 130%;
         width: auto;
         height: auto;
         padding: 20px;
+    }
+
+    .button-centered {
+        /* TODO: confirm this sizing */
+        font-size: 120%;
+    }
+
+    #options {
+        /* TODO: confirm this sizing */
+        font-size: 110%;
+    }
+
+    main {
+        /* TODO - confirm this sizing */
+        margin-top: 107px;
+    }
+
+    .centered {
+        /* TODO - confirm this sizing */
+        font-size: 210%;
+    }
+
+    #question {
+        /* TODO - confirm padding here */
+        font-size: 240%;
+    }
+
+    /* #answer-options-box {
+        padding-left: 10px;
+        padding-right: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    } */
+
+    #logo {
+        font-size: 250%;
+    }
+
+}
+
+/* Media query for laptops and larger (>= 992px) */
+@media screen and (min-width: 992px) {
+    #coding-books-image {
+        background: url("../images/coding-dark-image.jpg") no-repeat center center/cover;
+        /* height: 0px; */
+
+    }
+
+    /* #answer-options-box {
+        padding-left: 10px;
+        padding-right: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    } */
+
+    .button-sizing {
+        font-size: 150%;
+        padding: 20px;
+    }
+}
+
+/* Media query for laptops and larger (>= 1200px) */
+@media screen and (min-width: 1200px) {
+    #answer-options-box {
+        padding-left: 10px;
+        padding-right: 10px;
+        flex-direction: row;
+        /* flex-wrap: wrap; */
+        align-items: center;
     }
 }

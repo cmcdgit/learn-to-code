@@ -40,7 +40,7 @@
         <h2 class="centered">
             test yourself on?
         </h2>
-        <div id="language-options">
+        <div id="language-options-small">
             <button class="language" data-language="python">
                 <span class="button-centered">
                     .py
@@ -62,13 +62,35 @@
                 </span>
             </button>
         </div>
+        <div id="language-options-large">
+            <button class="language" data-language="python">
+                <span class="button-centered">
+                    python
+                </span>
+            </button>
+            <button class="language" data-language="css">
+                <span class="button-centered">
+                    css
+                </span>
+            </button>
+            <button class="language" data-language="javascript">
+                <span class="button-centered">
+                    javascript
+                </span>
+            </button>
+            <button class="language" data-language="c++">
+                <span class="button-centered">
+                    cpp
+                </span>
+            </button>
+        </div>
         <div class="with-border">
             <section id="computer-image">
                 <!-- dummy heading created to satisfy w3 validator-->
                 <h6></h6>
                 <div id="questionBox">
                     <div id="difficulty-area">
-                        <p>Difficulty: <span id="difficulty-rating"></span></p>
+                        <p><span id="difficulty-rating"></span></p>
                     </div>
                     <div id="question"></div>
                     <div id="answer-options-box">
@@ -81,8 +103,10 @@
                         <button class="button-sizing" id="option3" data-selection="3"></button>
                     </div>
                     <div class="score-area">
-                        <p>Right <span id="right-answers-total">0</span></p>
-                        <p>Wrong <span id="wrong-answers-total">0</span></p>
+                        <p><span style="color: green; font-size: 120%;" id="right-answers-total">0</span>
+                            <span style="color: black;">/</span>
+                            <span style="color: brown; font-size: 120%;" id="wrong-answers-total">0</span>
+                        </p>
                     </div>
                 </div>
 
